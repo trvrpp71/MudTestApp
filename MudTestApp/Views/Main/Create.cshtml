@@ -1,0 +1,98 @@
+﻿@model MudTestApp.Models.DataLayer.TblMain
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>TblMain</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Customer" class="control-label"></label>
+                <input asp-for="Customer" class="form-control" />
+                <span asp-validation-for="Customer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contact" class="control-label"></label>
+                <input asp-for="Contact" class="form-control" />
+                <span asp-validation-for="Contact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LabTech" class="control-label"></label>
+                <input asp-for="LabTech" class="form-control" />
+                <span asp-validation-for="LabTech" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MudType" class="control-label"></label>
+                <input asp-for="MudType" class="form-control" />
+                <span asp-validation-for="MudType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MudSystemName" class="control-label"></label>
+                <input asp-for="MudSystemName" class="form-control" />
+                <span asp-validation-for="MudSystemName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReceivedDate" class="control-label"></label>
+                <input asp-for="ReceivedDate" class="form-control" />
+                <span asp-validation-for="ReceivedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExposureTime" class="control-label"></label>
+                <input asp-for="ExposureTime" class="form-control" />
+                <span asp-validation-for="ExposureTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateIn" class="control-label"></label>
+                <input asp-for="DateIn" class="form-control" />
+                <span asp-validation-for="DateIn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeIn" class="control-label"></label>
+                <input asp-for="TimeIn" class="form-control" />
+                <span asp-validation-for="TimeIn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOut" class="control-label"></label>
+                <input asp-for="DateOut" class="form-control" />
+                <span asp-validation-for="DateOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeOut" class="control-label"></label>
+                <input asp-for="TimeOut" class="form-control" />
+                <span asp-validation-for="TimeOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LegacyMt" class="control-label"></label>
+                <input asp-for="LegacyMt" class="form-control" />
+                <span asp-validation-for="LegacyMt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpecialInstructions" class="control-label"></label>
+                <input asp-for="SpecialInstructions" class="form-control" />
+                <span asp-validation-for="SpecialInstructions" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rma" class="control-label"></label>
+                <input asp-for="Rma" class="form-control" />
+                <span asp-validation-for="Rma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

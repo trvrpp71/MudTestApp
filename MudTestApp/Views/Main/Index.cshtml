@@ -1,0 +1,119 @@
+﻿@model IEnumerable<MudTestApp.Models.DataLayer.TblMain>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LabTech)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MudType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MudSystemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceivedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExposureTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeOut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LegacyMt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialInstructions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rma)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SsmaTimeStamp)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LabTech)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MudType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MudSystemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceivedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExposureTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeOut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LegacyMt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialInstructions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SsmaTimeStamp)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Mt">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Mt">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Mt">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
