@@ -10,22 +10,22 @@ using MudTestApp.Models;
 
 namespace MudTestApp.Controllers
 {
-    public class MainController : Controller
+    public class CompoundsController : Controller
     {
         private readonly MudTestDbContext _context;
 
-        public MainController(MudTestDbContext context)
+        public CompoundsController(MudTestDbContext context)
         {
             _context = context;
         }
 
-        // GET: Main
+        // GET: Compounds
         public async Task<IActionResult> Index()
         {
-            return View(await _context.TblMains.ToListAsync());
+            return View(await _context.TblCompounds.ToListAsync());
         }
 
-        // GET: Main/Details/5
+        // GET: Compounds/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace MudTestApp.Controllers
                 return NotFound();
             }
 
-            var tblMain = await _context.TblMains
-                .FirstOrDefaultAsync(m => m.Mt == id);
-            if (tblMain == null)
+            var tblCompound = await _context.TblCompounds
+                .FirstOrDefaultAsync(m => m.CompoundId == id);
+            if (tblCompound == null)
             {
                 return NotFound();
             }
 
-            return View(tblMain);
+            return View(tblCompound);
         }
 
-        // GET: Main/Create
+        // GET: Compounds/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Main/Create
+        // POST: Compounds/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Mt,Customer,Contact,LabTech,MudType,MudSystemName,ReceivedDate,ExposureTime,DateIn,TimeIn,DateOut,TimeOut,LegacyMt,SpecialInstructions,Rma,SsmaTimeStamp")] TblMain tblMain)
+        public async Task<IActionResult> Create([Bind("CompoundId,Compound,Hardness,_25Mod,_50Mod,_100Mod,Tensile,Elongation,Development,SsmaTimeStamp")] TblCompound tblCompound)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(tblMain);
+                _context.Add(tblCompound);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(tblMain);
+            return View(tblCompound);
         }
 
-        // GET: Main/Edit/5
+        // GET: Compounds/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace MudTestApp.Controllers
                 return NotFound();
             }
 
-            var tblMain = await _context.TblMains.FindAsync(id);
-            if (tblMain == null)
+            var tblCompound = await _context.TblCompounds.FindAsync(id);
+            if (tblCompound == null)
             {
                 return NotFound();
             }
-            return View(tblMain);
+            return View(tblCompound);
         }
 
-        // POST: Main/Edit/5
+        // POST: Compounds/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Mt,Customer,Contact,LabTech,MudType,MudSystemName,ReceivedDate,ExposureTime,DateIn,TimeIn,DateOut,TimeOut,LegacyMt,SpecialInstructions,Rma,SsmaTimeStamp")] TblMain tblMain)
+        public async Task<IActionResult> Edit(int id, [Bind("CompoundId,Compound,Hardness,_25Mod,_50Mod,_100Mod,Tensile,Elongation,Development,SsmaTimeStamp")] TblCompound tblCompound)
         {
-            if (id != tblMain.Mt)
+            if (id != tblCompound.CompoundId)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace MudTestApp.Controllers
             {
                 try
                 {
-                    _context.Update(tblMain);
+                    _context.Update(tblCompound);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TblMainExists(tblMain.Mt))
+                    if (!TblCompoundExists(tblCompound.CompoundId))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace MudTestApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(tblMain);
+            return View(tblCompound);
         }
 
-        // GET: Main/Delete/5
+        // GET: Compounds/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace MudTestApp.Controllers
                 return NotFound();
             }
 
-            var tblMain = await _context.TblMains
-                .FirstOrDefaultAsync(m => m.Mt == id);
-            if (tblMain == null)
+            var tblCompound = await _context.TblCompounds
+                .FirstOrDefaultAsync(m => m.CompoundId == id);
+            if (tblCompound == null)
             {
                 return NotFound();
             }
 
-            return View(tblMain);
+            return View(tblCompound);
         }
 
-        // POST: Main/Delete/5
+        // POST: Compounds/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var tblMain = await _context.TblMains.FindAsync(id);
-            _context.TblMains.Remove(tblMain);
+            var tblCompound = await _context.TblCompounds.FindAsync(id);
+            _context.TblCompounds.Remove(tblCompound);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TblMainExists(int id)
+        private bool TblCompoundExists(int id)
         {
-            return _context.TblMains.Any(e => e.Mt == id);
+            return _context.TblCompounds.Any(e => e.CompoundId == id);
         }
     }
 }

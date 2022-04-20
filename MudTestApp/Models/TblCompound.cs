@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 
-namespace MudTestApp.Models.DataLayer
+namespace MudTestApp.Models
 {
     [Table("tblCompounds")]
     public partial class TblCompound
@@ -29,5 +29,9 @@ namespace MudTestApp.Models.DataLayer
         [Required]
         [Column("SSMA_TimeStamp")]
         public byte[] SsmaTimeStamp { get; set; }
+
+        //tp added code
+        public ICollection<Test> Tests { get; set; } //navigation property
+
     }
 }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 
-namespace MudTestApp.Models.DataLayer
+namespace MudTestApp.Models
 {
     [Table("tblTestResults")]
     public partial class TblTestResult

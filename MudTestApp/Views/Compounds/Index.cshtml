@@ -1,0 +1,79 @@
+﻿@model IEnumerable<MudTestApp.Models.TblCompound>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Compound)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hardness)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model._25Mod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model._50Mod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model._100Mod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tensile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Elongation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Development)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Compound)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hardness)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._25Mod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._50Mod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._100Mod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tensile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Elongation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Development)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CompoundId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CompoundId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CompoundId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

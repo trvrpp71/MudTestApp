@@ -1,0 +1,68 @@
+﻿@model MudTestApp.Models.TblCompound
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>TblCompound</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Compound" class="control-label"></label>
+                <input asp-for="Compound" class="form-control" />
+                <span asp-validation-for="Compound" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hardness" class="control-label"></label>
+                <input asp-for="Hardness" class="form-control" />
+                <span asp-validation-for="Hardness" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="_25Mod" class="control-label"></label>
+                <input asp-for="_25Mod" class="form-control" />
+                <span asp-validation-for="_25Mod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="_50Mod" class="control-label"></label>
+                <input asp-for="_50Mod" class="form-control" />
+                <span asp-validation-for="_50Mod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="_100Mod" class="control-label"></label>
+                <input asp-for="_100Mod" class="form-control" />
+                <span asp-validation-for="_100Mod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tensile" class="control-label"></label>
+                <input asp-for="Tensile" class="form-control" />
+                <span asp-validation-for="Tensile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Elongation" class="control-label"></label>
+                <input asp-for="Elongation" class="form-control" />
+                <span asp-validation-for="Elongation" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Development" /> @Html.DisplayNameFor(model => model.Development)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

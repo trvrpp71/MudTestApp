@@ -1,0 +1,75 @@
+﻿@model MudTestApp.Models.TblCompound
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TblCompound</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Compound)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Compound)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Hardness)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Hardness)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model._25Mod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model._25Mod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model._50Mod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model._50Mod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model._100Mod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model._100Mod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tensile)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tensile)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Elongation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Elongation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Development)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Development)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SsmaTimeStamp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SsmaTimeStamp)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CompoundId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

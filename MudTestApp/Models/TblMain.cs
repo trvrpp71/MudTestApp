@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
+
 #nullable disable
 
-namespace MudTestApp.Models.DataLayer
+namespace MudTestApp.Models
 {
     [Table("tblMain")]
     public partial class TblMain
@@ -39,5 +41,10 @@ namespace MudTestApp.Models.DataLayer
         [Required]
         [Column("SSMA_TimeStamp")]
         public byte[] SsmaTimeStamp { get; set; }
+
+
+        //tp code
+        public int CompoundId { get; set; }  //foreign key property
+        public Compound Compound { get; set; } //navigation property
     }
 }

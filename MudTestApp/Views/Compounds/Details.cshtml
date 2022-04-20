@@ -1,0 +1,72 @@
+﻿@model MudTestApp.Models.TblCompound
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TblCompound</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Compound)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Compound)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Hardness)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Hardness)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model._25Mod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model._25Mod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model._50Mod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model._50Mod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model._100Mod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model._100Mod)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tensile)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tensile)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Elongation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Elongation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Development)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Development)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SsmaTimeStamp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SsmaTimeStamp)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CompoundId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
